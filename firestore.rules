@@ -1,0 +1,119 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ── HELPERS ──
+    function isAuth() {
+      return request.auth != null;
+    }
+    function role() {
+      return request.auth.token.role;
+    }
+    function isDev() {
+      return isAuth() && role() == "developer";
+    }
+    function isCompany() {
+      return isAuth() && role() == "company";
+    }
+    function myBusinessId() {
+      return request.auth.token.businessId;
+    }
+    function ownsBiz(bizId) {
+      return isCompany() && myBusinessId() == bizId;
+    }
+
+    // ── USERS ──
+    match /users/{uid} {
+      allow read: if isAuth() && (request.auth.uid == uid || isDev());
+      allow update: if isAuth() && request.auth.uid == uid
+        && !request.resource.data.diff(resource.data).affectedKeys()
+            .hasAny(["role","businessId","uid","createdAt"]);
+      allow create, delete: if false;
+
+      match /addresses/{aId} {
+        allow read, write: if isAuth() && request.auth.uid == uid;
+      }
+      match /notifications/{nId} {
+        allow read: if isAuth() && request.auth.uid == uid;
+        allow update: if isAuth() && request.auth.uid == uid
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["isRead"]);
+        allow create, delete: if false;
+      }
+    }
+
+    // ── BUSINESSES ──
+    match /businesses/{bizId} {
+      allow read: if resource.data.isActive == true || isDev() || ownsBiz(bizId);
+      allow update: if ownsBiz(bizId)
+        && !request.resource.data.diff(resource.data).affectedKeys()
+            .hasAny(["businessId","ownerId","stripeAccountId",
+                     "stripeOnboardingComplete","isVerified","createdAt",
+                     "averageRating","totalReviews","totalOrders"]);
+      allow create, delete: if false;
+
+      match /reviews/{rId} {
+        allow read: if true;
+        allow create: if isAuth() && request.auth.token.role == "buyer"
+          && request.resource.data.buyerId == request.auth.uid;
+        allow update, delete: if isDev();
+      }
+      match /analytics/{dateStr} {
+        allow read: if ownsBiz(bizId) || isDev();
+        allow write: if false;
+      }
+    }
+
+    // ── MENUS ──
+    match /menus/{bizId} {
+      allow read: if true;
+      allow write: if ownsBiz(bizId);
+      match /items/{itemId} {
+        allow read: if true;
+        allow create, update: if ownsBiz(bizId);
+        allow delete: if ownsBiz(bizId) || isDev();
+      }
+    }
+
+    // ── ORDERS ──
+    match /orders/{orderId} {
+      allow read: if isAuth() && (
+        resource.data.buyerId == request.auth.uid ||
+        ownsBiz(resource.data.businessId) ||
+        isDev()
+      );
+      allow create: if false;
+      allow update: if isAuth() && (
+        (ownsBiz(resource.data.businessId) &&
+         request.resource.data.diff(resource.data).affectedKeys()
+           .hasOnly(["cashConfirmedAt","cashConfirmedBy","estimatedReadyTime","updatedAt"])) ||
+        isDev()
+      );
+      allow delete: if false;
+    }
+
+    // ── ANALYTICS (platform) ──
+    match /analytics/{doc=**} {
+      allow read: if isDev();
+      allow write: if false;
+    }
+
+    // ── NOTIFICATIONS (global) ──
+    match /notifications/{nId} {
+      allow read: if isAuth() && resource.data.recipientId == request.auth.uid;
+      allow update: if isAuth() && resource.data.recipientId == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(["isRead"]);
+      allow create, delete: if false;
+    }
+
+    // ── LOGS ──
+    match /logs/{logId} {
+      allow read: if isDev();
+      allow write: if false;
+    }
+
+    // ── DENY ALL ELSE ──
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
