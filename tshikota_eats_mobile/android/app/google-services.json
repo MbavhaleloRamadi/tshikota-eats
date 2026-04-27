@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1004559255461",
+    "firebase_url": "https://tshikota-eats-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "tshikota-eats",
+    "storage_bucket": "tshikota-eats.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004559255461:android:c94cc62000812e3ee80a4c",
+        "android_client_info": {
+          "package_name": "com.example.tshikota_eats_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004559255461-4fsu7faf3ps011hsemlupfbkk3kor4si.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwATLcneKIQTtIA0rB09am2tncHpp_lsc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004559255461-4fsu7faf3ps011hsemlupfbkk3kor4si.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
