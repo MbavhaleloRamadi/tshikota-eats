@@ -3,6 +3,8 @@ admin.initializeApp();
 
 // Auth triggers
 exports.onUserCreated = require("./src/auth/onUserCreated");
+exports.onUserSignedIn = require("./src/auth/onUserSignedIn");
+
 
 // Callable functions
 exports.assignCompanyRole = require("./src/auth/assignCompanyRole");
