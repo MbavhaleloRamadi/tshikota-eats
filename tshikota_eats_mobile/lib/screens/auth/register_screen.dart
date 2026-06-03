@@ -48,11 +48,25 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
         displayName: _nameCtrl.text.trim(),
       );
 
-      await Future.delayed(const Duration(seconds: 2));
+      await Future.delayed(const Duration(seconds: 3));
       await authService.refreshToken();
 
       if (!mounted) return;
-      context.go('/buyer/home');
+
+      final role = await authService.getUserRole();
+
+      if (!mounted) return;
+
+      switch (role) {
+        case 'developer':
+          context.go('/developer/dashboard');
+          break;
+        case 'company':
+          context.go('/company/dashboard');
+          break;
+        default:
+          context.go('/buyer/home');
+      }
     } on FirebaseAuthException catch (e) {
       setState(() {
         _errorMessage = switch (e.code) {
