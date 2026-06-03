@@ -159,8 +159,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         prefixIcon: Icon(Icons.email_outlined),
                       ),
                       validator: (val) {
-                        if (val == null || val.trim().isEmpty)
+                        if (val == null || val.trim().isEmpty) {
                           return 'Email is required';
+                        }
                         if (!val.contains('@')) return 'Enter a valid email';
                         return null;
                       },
@@ -185,8 +186,9 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         ),
                       ),
                       validator: (val) {
-                        if (val == null || val.isEmpty)
+                        if (val == null || val.isEmpty) {
                           return 'Password is required';
+                        }
                         if (val.length < 6) return 'Minimum 6 characters';
                         return null;
                       },

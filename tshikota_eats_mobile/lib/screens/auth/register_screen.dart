@@ -149,8 +149,9 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                         prefixIcon: Icon(Icons.email_outlined),
                       ),
                       validator: (v) {
-                        if (v == null || v.trim().isEmpty)
+                        if (v == null || v.trim().isEmpty) {
                           return 'Email is required';
+                        }
                         if (!v.contains('@')) return 'Enter a valid email';
                         return null;
                       },
@@ -172,8 +173,9 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                         ),
                       ),
                       validator: (v) {
-                        if (v == null || v.isEmpty)
+                        if (v == null || v.isEmpty) {
                           return 'Password is required';
+                        }
                         if (v.length < 6) return 'Minimum 6 characters';
                         return null;
                       },
@@ -196,8 +198,9 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                         ),
                       ),
                       validator: (v) {
-                        if (v != _passwordCtrl.text)
+                        if (v != _passwordCtrl.text) {
                           return 'Passwords do not match';
+                        }
                         return null;
                       },
                     ),

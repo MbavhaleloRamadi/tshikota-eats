@@ -376,7 +376,7 @@ class _BusinessesTab extends StatelessWidget {
                     ),
                     const SizedBox(height: 12),
                     DropdownButtonFormField<String>(
-                      value: category,
+                      initialValue: category,
                       decoration: const InputDecoration(hintText: 'Category'),
                       items: const [
                         DropdownMenuItem(value: 'food', child: Text('Food')),
@@ -655,7 +655,7 @@ class _UsersTab extends StatelessWidget {
                       }
 
                       return DropdownButtonFormField<String>(
-                        value: selectedBusinessId,
+                        initialValue: selectedBusinessId,
                         decoration: const InputDecoration(
                             hintText: 'Select a business'),
                         items: businesses.map((doc) {

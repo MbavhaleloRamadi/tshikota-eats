@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,6 +19,7 @@ import '../screens/company/analytics_screen.dart';
 import '../screens/company/settings_screen.dart';
 import '../screens/developer/developer_shell.dart';
 import '../screens/developer/dev_dashboard_screen.dart';
+import '../screens/buyer/profile_screen.dart';
 
 final appRouterProvider = Provider<GoRouter>((ref) {
   return GoRouter(
@@ -40,8 +40,7 @@ final appRouterProvider = Provider<GoRouter>((ref) {
               builder: (_, __) => const OrderHistoryScreen()),
           GoRoute(
               path: '/buyer/profile',
-              builder: (_, __) =>
-                  const Scaffold(body: Center(child: Text('Profile')))),
+              builder: (_, __) => const BuyerProfileScreen()),
         ],
       ),
 
