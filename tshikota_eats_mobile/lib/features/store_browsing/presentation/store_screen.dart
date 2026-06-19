@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:go_router/go_router.dart';
 import '../../../core/config/theme.dart';
-import '../../utils/currency_formatter.dart';
+import '../../../core/utils/currency_formatter.dart';
 
 class StoreScreen extends StatelessWidget {
   final String slug;
@@ -44,7 +44,7 @@ class StoreScreen extends StatelessWidget {
                   icon: Container(
                     padding: const EdgeInsets.all(8),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.9),
+                      color: Colors.white.withValues(alpha: 0.9),
                       shape: BoxShape.circle,
                     ),
                     child: const Icon(Icons.arrow_back_ios_new, size: 18),
@@ -57,14 +57,16 @@ class StoreScreen extends StatelessWidget {
                           imageUrl: bizData['bannerURL'],
                           fit: BoxFit.cover,
                           errorWidget: (_, __, ___) => Container(
-                            color: TshikotaTheme.royalRed.withOpacity(0.1),
+                            color: TshikotaTheme.royalRed.withValues(
+                              alpha: 0.1,
+                            ),
                           ),
                         )
                       : Container(
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                TshikotaTheme.royalRed.withOpacity(0.8),
+                                TshikotaTheme.royalRed.withValues(alpha: 0.8),
                                 TshikotaTheme.burgundy,
                               ],
                               begin: Alignment.topLeft,
@@ -141,8 +143,8 @@ class StoreScreen extends StatelessWidget {
                             ),
                             decoration: BoxDecoration(
                               color: (bizData['isOpen'] == true)
-                                  ? TshikotaTheme.success.withOpacity(0.1)
-                                  : Colors.grey.withOpacity(0.1),
+                                  ? TshikotaTheme.success.withValues(alpha: 0.1)
+                                  : Colors.grey.withValues(alpha: 0.1),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
@@ -279,7 +281,7 @@ class _MenuItemCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.03),
+            color: Colors.black.withValues(alpha: 0.03),
             blurRadius: 6,
             offset: const Offset(0, 2),
           ),

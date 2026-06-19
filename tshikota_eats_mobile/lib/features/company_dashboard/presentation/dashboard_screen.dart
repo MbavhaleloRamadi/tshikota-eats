@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
 import '../../../core/config/theme.dart';
-import '../../utils/currency_formatter.dart';
+import '../../../core/utils/currency_formatter.dart';
 
 class CompanyDashboardScreen extends StatefulWidget {
   const CompanyDashboardScreen({super.key});
@@ -104,7 +104,7 @@ class _CompanyDashboardScreenState extends State<CompanyDashboardScreen> {
                           vertical: 6,
                         ),
                         decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.2),
+                          color: Colors.white.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: Text(
@@ -184,7 +184,7 @@ class _CompanyDashboardScreenState extends State<CompanyDashboardScreen> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(14),
                         border: Border.all(
-                          color: TshikotaTheme.gold.withOpacity(0.3),
+                          color: TshikotaTheme.gold.withValues(alpha: 0.3),
                         ),
                       ),
                       child: Column(
@@ -205,7 +205,9 @@ class _CompanyDashboardScreenState extends State<CompanyDashboardScreen> {
                                   vertical: 4,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: TshikotaTheme.gold.withOpacity(0.15),
+                                  color: TshikotaTheme.gold.withValues(
+                                    alpha: 0.15,
+                                  ),
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                                 child: Text(
