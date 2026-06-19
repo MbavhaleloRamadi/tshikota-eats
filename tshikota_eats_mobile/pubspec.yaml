@@ -1,16 +1,16 @@
 name: tshikota_eats_mobile
 description: Tshikota Eats — Food Marketplace
-
 publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.0 <4.0.0'
+  sdk: ^3.11.0
 
 dependencies:
   flutter:
     sdk: flutter
 
+  # Firebase
   firebase_core: ^3.8.0
   firebase_auth: ^5.3.3
   cloud_firestore: ^5.5.1
@@ -19,19 +19,35 @@ dependencies:
   firebase_analytics: ^11.3.6
   firebase_crashlytics: ^4.1.6
   cloud_functions: ^5.1.6
+  firebase_app_check: ^0.3.1+6
+  firebase_performance: ^0.10.0+10
 
+  # State Management
   flutter_riverpod: ^2.6.1
+
+  # Navigation
   go_router: ^14.6.2
 
+  # UI
   cached_network_image: ^3.4.1
   shimmer: ^3.0.0
   google_fonts: ^6.2.1
   flutter_local_notifications: ^18.0.1
   badges: ^3.1.2
   intl: ^0.19.0
+  fl_chart: ^0.70.2
+  percent_indicator: ^4.2.3
 
+  # Security
+  flutter_secure_storage: ^9.2.3
+
+  # Network
+  connectivity_plus: ^6.1.1
+
+  # Payments
   flutter_stripe: ^11.2.0
 
+  # Utils
   image_picker: ^1.1.2
   url_launcher: ^6.3.1
   share_plus: ^10.1.2
