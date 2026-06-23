@@ -44,7 +44,7 @@ class _MenuManagementScreenState extends State<MenuManagementScreen> {
     if (_businessId == null) {
       return const Scaffold(
         body: Center(
-          child: CircularProgressIndicator(color: TshikotaTheme.royalRed),
+          child: CircularProgressIndicator(color: TshikotaTheme.forestGreen),
         ),
       );
     }
@@ -54,7 +54,7 @@ class _MenuManagementScreenState extends State<MenuManagementScreen> {
       appBar: AppBar(title: const Text('Menu Manager')),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () => _showAddEditDialog(null),
-        backgroundColor: TshikotaTheme.royalRed,
+        backgroundColor: TshikotaTheme.forestGreen,
         foregroundColor: Colors.white,
         icon: const Icon(Icons.add),
         label: const Text('Add Item'),
@@ -69,7 +69,9 @@ class _MenuManagementScreenState extends State<MenuManagementScreen> {
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return const Center(
-              child: CircularProgressIndicator(color: TshikotaTheme.royalRed),
+              child: CircularProgressIndicator(
+                color: TshikotaTheme.forestGreen,
+              ),
             );
           }
 
@@ -191,7 +193,7 @@ class _MenuManagementScreenState extends State<MenuManagementScreen> {
                                 style: const TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w800,
-                                  color: TshikotaTheme.royalRed,
+                                  color: TshikotaTheme.forestGreen,
                                 ),
                               ),
                               const SizedBox(width: 12),
@@ -213,7 +215,7 @@ class _MenuManagementScreenState extends State<MenuManagementScreen> {
                                     vertical: 2,
                                   ),
                                   decoration: BoxDecoration(
-                                    color: TshikotaTheme.gold.withValues(
+                                    color: TshikotaTheme.softGold.withValues(
                                       alpha: 0.2,
                                     ),
                                     borderRadius: BorderRadius.circular(4),
@@ -256,7 +258,7 @@ class _MenuManagementScreenState extends State<MenuManagementScreen> {
                         IconButton(
                           icon: const Icon(
                             Icons.edit_outlined,
-                            color: TshikotaTheme.royalRed,
+                            color: TshikotaTheme.forestGreen,
                             size: 22,
                           ),
                           onPressed: () => _showAddEditDialog(items[i]),
@@ -475,7 +477,7 @@ class _MenuManagementScreenState extends State<MenuManagementScreen> {
                             value: isSpecial,
                             onChanged: (val) =>
                                 setModalState(() => isSpecial = val),
-                            activeThumbColor: TshikotaTheme.gold,
+                            activeThumbColor: TshikotaTheme.softGold,
                           ),
                         ],
                       ),

@@ -20,13 +20,13 @@ class BuyerProfileScreen extends StatelessWidget {
             // Avatar
             CircleAvatar(
               radius: 40,
-              backgroundColor: TshikotaTheme.royalRed.withValues(alpha: 0.1),
+              backgroundColor: TshikotaTheme.forestGreen.withValues(alpha: 0.1),
               child: Text(
                 (user?.displayName ?? 'U')[0].toUpperCase(),
                 style: const TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.w800,
-                  color: TshikotaTheme.royalRed,
+                  color: TshikotaTheme.forestGreen,
                 ),
               ),
             ),

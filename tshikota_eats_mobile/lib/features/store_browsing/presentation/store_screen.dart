@@ -23,7 +23,9 @@ class StoreScreen extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(),
             body: const Center(
-              child: CircularProgressIndicator(color: TshikotaTheme.royalRed),
+              child: CircularProgressIndicator(
+                color: TshikotaTheme.forestGreen,
+              ),
             ),
           );
         }
@@ -57,7 +59,7 @@ class StoreScreen extends StatelessWidget {
                           imageUrl: bizData['bannerURL'],
                           fit: BoxFit.cover,
                           errorWidget: (_, __, ___) => Container(
-                            color: TshikotaTheme.royalRed.withValues(
+                            color: TshikotaTheme.forestGreen.withValues(
                               alpha: 0.1,
                             ),
                           ),
@@ -66,7 +68,9 @@ class StoreScreen extends StatelessWidget {
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                TshikotaTheme.royalRed.withValues(alpha: 0.8),
+                                TshikotaTheme.forestGreen.withValues(
+                                  alpha: 0.8,
+                                ),
                                 TshikotaTheme.burgundy,
                               ],
                               begin: Alignment.topLeft,
@@ -122,7 +126,7 @@ class StoreScreen extends StatelessWidget {
                                     const Icon(
                                       Icons.star_rounded,
                                       size: 16,
-                                      color: TshikotaTheme.gold,
+                                      color: TshikotaTheme.softGold,
                                     ),
                                     const SizedBox(width: 4),
                                     Text(
@@ -198,7 +202,7 @@ class StoreScreen extends StatelessWidget {
                         child: Padding(
                           padding: EdgeInsets.all(32),
                           child: CircularProgressIndicator(
-                            color: TshikotaTheme.royalRed,
+                            color: TshikotaTheme.forestGreen,
                           ),
                         ),
                       ),
@@ -233,7 +237,7 @@ class StoreScreen extends StatelessWidget {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                 content: Text('${item['name']} added to cart!'),
-                                backgroundColor: TshikotaTheme.royalRed,
+                                backgroundColor: TshikotaTheme.forestGreen,
                                 behavior: SnackBarBehavior.floating,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
@@ -323,7 +327,7 @@ class _MenuItemCard extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 17,
                         fontWeight: FontWeight.w800,
-                        color: TshikotaTheme.royalRed,
+                        color: TshikotaTheme.forestGreen,
                       ),
                     ),
                   ],
@@ -359,7 +363,7 @@ class _MenuItemCard extends StatelessWidget {
                           vertical: 6,
                         ),
                         decoration: BoxDecoration(
-                          color: TshikotaTheme.royalRed,
+                          color: TshikotaTheme.forestGreen,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: const Text(

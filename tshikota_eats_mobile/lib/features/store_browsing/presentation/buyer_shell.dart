@@ -92,7 +92,9 @@ class _NavItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final color = isActive ? TshikotaTheme.royalRed : TshikotaTheme.textMuted;
+    final color = isActive
+        ? TshikotaTheme.forestGreen
+        : TshikotaTheme.textMuted;
 
     return GestureDetector(
       onTap: onTap,
@@ -102,7 +104,7 @@ class _NavItem extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
           color: isActive
-              ? TshikotaTheme.royalRed.withValues(alpha: 0.08)
+              ? TshikotaTheme.forestGreen.withValues(alpha: 0.08)
               : Colors.transparent,
           borderRadius: BorderRadius.circular(12),
         ),

@@ -45,7 +45,7 @@ class _DevDashboardScreenState extends State<DevDashboardScreen>
       backgroundColor: TshikotaTheme.bgPrimary,
       appBar: AppBar(
         title: const Text('Developer Dashboard'),
-        backgroundColor: TshikotaTheme.royalRed,
+        backgroundColor: TshikotaTheme.forestGreen,
         foregroundColor: Colors.white,
         actions: [
           IconButton(
@@ -62,7 +62,7 @@ class _DevDashboardScreenState extends State<DevDashboardScreen>
         ],
         bottom: TabBar(
           controller: _tabController,
-          indicatorColor: TshikotaTheme.gold,
+          indicatorColor: TshikotaTheme.softGold,
           labelColor: Colors.white,
           unselectedLabelColor: Colors.white60,
           tabs: const [
@@ -121,7 +121,7 @@ class _OverviewTab extends StatelessWidget {
                     title: 'Total Users',
                     value: '${data['totalUsers'] ?? 0}',
                     icon: Icons.people,
-                    color: TshikotaTheme.royalRed,
+                    color: TshikotaTheme.forestGreen,
                   ),
                   _MetricCard(
                     title: 'Businesses',
@@ -133,7 +133,7 @@ class _OverviewTab extends StatelessWidget {
                     title: 'Total Orders',
                     value: '${data['totalOrders'] ?? 0}',
                     icon: Icons.receipt_long,
-                    color: TshikotaTheme.gold,
+                    color: TshikotaTheme.softGold,
                   ),
                   _MetricCard(
                     title: 'Revenue',
@@ -239,7 +239,7 @@ class _BusinessesTab extends StatelessWidget {
               if (!snapshot.hasData) {
                 return const Center(
                   child: CircularProgressIndicator(
-                    color: TshikotaTheme.royalRed,
+                    color: TshikotaTheme.forestGreen,
                   ),
                 );
               }
@@ -548,7 +548,7 @@ class _UsersTab extends StatelessWidget {
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           return const Center(
-            child: CircularProgressIndicator(color: TshikotaTheme.royalRed),
+            child: CircularProgressIndicator(color: TshikotaTheme.forestGreen),
           );
         }
 
@@ -568,7 +568,7 @@ class _UsersTab extends StatelessWidget {
             final role = user['role'] ?? 'buyer';
 
             Color roleColor = TshikotaTheme.textMuted;
-            if (role == 'developer') roleColor = TshikotaTheme.royalRed;
+            if (role == 'developer') roleColor = TshikotaTheme.forestGreen;
             if (role == 'company') roleColor = TshikotaTheme.burgundy;
 
             return Container(
@@ -655,7 +655,7 @@ class _UsersTab extends StatelessWidget {
                               vertical: 4,
                             ),
                             decoration: BoxDecoration(
-                              color: TshikotaTheme.royalRed,
+                              color: TshikotaTheme.forestGreen,
                               borderRadius: BorderRadius.circular(8),
                             ),
                             child: const Text(

@@ -94,7 +94,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                   width: 72,
                   height: 72,
                   decoration: BoxDecoration(
-                    color: TshikotaTheme.royalRed,
+                    color: TshikotaTheme.forestGreen,
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: const Center(
@@ -241,7 +241,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                     child: const Text(
                       'Sign Up',
                       style: TextStyle(
-                        color: TshikotaTheme.royalRed,
+                        color: TshikotaTheme.forestGreen,
                         fontWeight: FontWeight.w700,
                       ),
                     ),

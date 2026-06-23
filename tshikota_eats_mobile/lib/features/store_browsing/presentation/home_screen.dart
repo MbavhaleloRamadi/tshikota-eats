@@ -65,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             Text(
                               'Tshikota Eats',
                               style: Theme.of(context).textTheme.headlineMedium
-                                  ?.copyWith(color: TshikotaTheme.royalRed),
+                                  ?.copyWith(color: TshikotaTheme.forestGreen),
                             ),
                             const SizedBox(height: 4),
                             Text(
@@ -140,12 +140,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         decoration: BoxDecoration(
                           color: isSelected
-                              ? TshikotaTheme.royalRed
+                              ? TshikotaTheme.forestGreen
                               : Colors.white,
                           borderRadius: BorderRadius.circular(22),
                           border: Border.all(
                             color: isSelected
-                                ? TshikotaTheme.royalRed
+                                ? TshikotaTheme.forestGreen
                                 : TshikotaTheme.borderLight,
                           ),
                         ),
@@ -414,7 +414,7 @@ class _StoreCard extends StatelessWidget {
                       const Icon(
                         Icons.star_rounded,
                         size: 16,
-                        color: TshikotaTheme.gold,
+                        color: TshikotaTheme.softGold,
                       ),
                       const SizedBox(width: 4),
                       Text(

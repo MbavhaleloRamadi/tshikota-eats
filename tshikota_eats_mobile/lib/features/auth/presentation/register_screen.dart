@@ -246,7 +246,7 @@ class _RegisterScreenState extends ConsumerState<RegisterScreen> {
                     child: const Text(
                       'Sign In',
                       style: TextStyle(
-                        color: TshikotaTheme.royalRed,
+                        color: TshikotaTheme.forestGreen,
                         fontWeight: FontWeight.w700,
                       ),
                     ),

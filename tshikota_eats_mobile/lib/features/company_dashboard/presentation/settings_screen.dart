@@ -56,7 +56,9 @@ class _CompanySettingsScreenState extends State<CompanySettingsScreen> {
       appBar: AppBar(title: const Text('Settings')),
       body: _business == null
           ? const Center(
-              child: CircularProgressIndicator(color: TshikotaTheme.royalRed),
+              child: CircularProgressIndicator(
+                color: TshikotaTheme.forestGreen,
+              ),
             )
           : SingleChildScrollView(
               padding: const EdgeInsets.all(20),
@@ -182,7 +184,7 @@ class _CompanySettingsScreenState extends State<CompanySettingsScreen> {
                                 'https://tshikotaeats.co.za/store/${_business?['slug']}',
                             style: const TextStyle(
                               fontSize: 13,
-                              color: TshikotaTheme.royalRed,
+                              color: TshikotaTheme.forestGreen,
                             ),
                           ),
                         ),

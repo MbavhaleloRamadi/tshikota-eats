@@ -34,7 +34,7 @@ class _CompanyDashboardScreenState extends State<CompanyDashboardScreen> {
     if (_businessId == null) {
       return const Scaffold(
         body: Center(
-          child: CircularProgressIndicator(color: TshikotaTheme.royalRed),
+          child: CircularProgressIndicator(color: TshikotaTheme.forestGreen),
         ),
       );
     }
@@ -75,7 +75,10 @@ class _CompanyDashboardScreenState extends State<CompanyDashboardScreen> {
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
-                      colors: [TshikotaTheme.royalRed, TshikotaTheme.burgundy],
+                      colors: [
+                        TshikotaTheme.forestGreen,
+                        TshikotaTheme.burgundy,
+                      ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     ),
@@ -139,7 +142,7 @@ class _CompanyDashboardScreenState extends State<CompanyDashboardScreen> {
                 if (!snapshot.hasData) {
                   return const Center(
                     child: CircularProgressIndicator(
-                      color: TshikotaTheme.royalRed,
+                      color: TshikotaTheme.forestGreen,
                     ),
                   );
                 }
@@ -184,7 +187,7 @@ class _CompanyDashboardScreenState extends State<CompanyDashboardScreen> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(14),
                         border: Border.all(
-                          color: TshikotaTheme.gold.withValues(alpha: 0.3),
+                          color: TshikotaTheme.softGold.withValues(alpha: 0.3),
                         ),
                       ),
                       child: Column(
@@ -205,7 +208,7 @@ class _CompanyDashboardScreenState extends State<CompanyDashboardScreen> {
                                   vertical: 4,
                                 ),
                                 decoration: BoxDecoration(
-                                  color: TshikotaTheme.gold.withValues(
+                                  color: TshikotaTheme.softGold.withValues(
                                     alpha: 0.15,
                                   ),
                                   borderRadius: BorderRadius.circular(8),
@@ -235,7 +238,7 @@ class _CompanyDashboardScreenState extends State<CompanyDashboardScreen> {
                             style: const TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w800,
-                              color: TshikotaTheme.royalRed,
+                              color: TshikotaTheme.forestGreen,
                             ),
                           ),
                           const SizedBox(height: 12),
