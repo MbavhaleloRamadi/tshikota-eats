@@ -77,7 +77,7 @@ class _CompanyDashboardScreenState extends State<CompanyDashboardScreen> {
                     gradient: const LinearGradient(
                       colors: [
                         TshikotaTheme.forestGreen,
-                        TshikotaTheme.burgundy,
+                        TshikotaTheme.terracotta,
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,

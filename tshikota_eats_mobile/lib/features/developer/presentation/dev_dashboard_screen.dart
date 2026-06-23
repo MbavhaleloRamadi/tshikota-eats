@@ -127,7 +127,7 @@ class _OverviewTab extends StatelessWidget {
                     title: 'Businesses',
                     value: '${data['totalBusinesses'] ?? 0}',
                     icon: Icons.store,
-                    color: TshikotaTheme.burgundy,
+                    color: TshikotaTheme.terracotta,
                   ),
                   _MetricCard(
                     title: 'Total Orders',
@@ -569,7 +569,7 @@ class _UsersTab extends StatelessWidget {
 
             Color roleColor = TshikotaTheme.textMuted;
             if (role == 'developer') roleColor = TshikotaTheme.forestGreen;
-            if (role == 'company') roleColor = TshikotaTheme.burgundy;
+            if (role == 'company') roleColor = TshikotaTheme.terracotta;
 
             return Container(
               padding: const EdgeInsets.all(16),

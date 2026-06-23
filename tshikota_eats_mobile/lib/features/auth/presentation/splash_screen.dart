@@ -76,7 +76,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: TshikotaTheme.forestGreen,
+      backgroundColor: TshikotaTheme.forestGreen, // TE text color on white box
       body: Center(
         child: AnimatedBuilder(
           animation: _controller,

@@ -225,7 +225,7 @@ class _MenuManagementScreenState extends State<MenuManagementScreen> {
                                     style: TextStyle(
                                       fontSize: 10,
                                       fontWeight: FontWeight.w800,
-                                      color: TshikotaTheme.burgundy,
+                                      color: TshikotaTheme.terracotta,
                                     ),
                                   ),
                                 ),

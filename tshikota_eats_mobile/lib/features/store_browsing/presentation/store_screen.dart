@@ -71,7 +71,7 @@ class StoreScreen extends StatelessWidget {
                                 TshikotaTheme.forestGreen.withValues(
                                   alpha: 0.8,
                                 ),
-                                TshikotaTheme.burgundy,
+                                TshikotaTheme.terracotta,
                               ],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
